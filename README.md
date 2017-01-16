@@ -1,9 +1,11 @@
-SpreeasyPost
+#SpreeasyPost
 
 Adds postage purchase options to orders made within Spree Commerce.
 
-Testing
 
+##Testing
 
+```
 $ bundle exec rake test_app
 $ bundle exec rake spec
+```

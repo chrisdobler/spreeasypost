@@ -11,11 +11,26 @@ Gem::Specification.new do |s|
   s.description = "Adds postage purchase options using EasyPost to orders made within Spree Commerce."
   s.authors     = ["Chris Dobler"]
   s.email       = 'chrisdobler@gmail.com'
-  s.homepage    =
-    'http://rubygems.org/gems/spreeasypost'
+  s.homepage    = 'http://rubygems.org/gems/spreeasypost'
   s.license       = 'MIT'
 
   s.add_development_dependency "rspec"
+  s.add_development_dependency "rails"
+  s.add_development_dependency 'factory_girl', '~> 4.4'
+  s.add_development_dependency "factory_girl_rails"
+  s.add_development_dependency 'rspec-rails',  '~> 3.5.2'
+
+  s.add_dependency 'spree_core', '~> 3.1.1'
+  s.add_dependency 'easypost', '2.1.7'
+  s.add_development_dependency 'spree_sample'
+  s.add_development_dependency 'capybara', '~> 2.1'
+  s.add_development_dependency 'coffee-rails'
+  s.add_development_dependency 'database_cleaner'
+  s.add_development_dependency 'ffaker'
+  s.add_development_dependency 'sass-rails'
+  s.add_development_dependency 'selenium-webdriver'
+  s.add_development_dependency 'simplecov'
+  s.add_development_dependency 'sqlite3'
 
   s.rubyforge_project = "spreeasypost"
 

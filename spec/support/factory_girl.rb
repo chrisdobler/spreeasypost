@@ -12,6 +12,7 @@ RSpec.configure do |config|
   config.before :each do
     DatabaseCleaner.strategy = example.metadata[:js] ? :truncation : :transaction
     DatabaseCleaner.start
+    FactoryGirl.lint
   end
 
   # After each spec clean the database.

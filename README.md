@@ -7,7 +7,7 @@ Introduction goes here.
 
 1. Add this extension to your Gemfile with this line:
   ```ruby
-  gem 'spreasypost', github: '[your-github-handle]/spreasypost', branch: 'X-X-stable'
+  gem 'spreeasypost', github: '[your-github-handle]/spreeasypost', branch: 'X-X-stable'
   ```
 
   The `branch` option is important: it must match the version of Spree you're using.
@@ -20,7 +20,7 @@ Introduction goes here.
 
 3. Copy & run migrations
   ```ruby
-  bundle exec rails g spreasypost:install
+  bundle exec rails g spreeasypost:install
   ```
 
 4. Restart your server
@@ -40,7 +40,7 @@ When testing your applications integration with this extension you may use it's 
 Simply add this require statement to your spec_helper:
 
 ```ruby
-require 'spreasypost/factories'
+require 'spreeasypost/factories'
 ```
 
 

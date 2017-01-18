@@ -1,5 +1,3 @@
-class Spreeasypost
-  def self.hi
-    puts "Hello world!"
-  end
-end
+require 'spree_core'
+require 'easypost'
+require 'spreeasypost/engine'

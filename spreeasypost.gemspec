@@ -14,6 +14,9 @@ Gem::Specification.new do |s|
   s.homepage    = 'http://rubygems.org/gems/spreeasypost'
   s.license       = 'MIT'
 
+
+  s.add_development_dependency "pry-byebug" # binding.pry to debug!
+  s.add_development_dependency "awesome_print"
   s.add_development_dependency "rspec"
   s.add_development_dependency "rails"
   s.add_development_dependency 'factory_girl', '~> 4.4'

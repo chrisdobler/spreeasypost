@@ -43,3 +43,4 @@ bower.json
 .DS_Store
 Gemfile.lock
 /spec/dummy
+pkg

@@ -17,6 +17,7 @@ require File.expand_path('../dummy/config/environment.rb',  __FILE__)
 
 require 'pry-byebug' # binding.pry to debug!
 require 'awesome_print'
+require 'capybara-screenshot'
 
 require 'rspec/rails'
 require 'database_cleaner'

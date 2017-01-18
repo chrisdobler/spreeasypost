@@ -15,6 +15,7 @@ Gem::Specification.new do |s|
   s.license       = 'MIT'
 
 
+  s.add_development_dependency "capybara-screenshot"
   s.add_development_dependency "pry-byebug" # binding.pry to debug!
   s.add_development_dependency "awesome_print"
   s.add_development_dependency "rspec"

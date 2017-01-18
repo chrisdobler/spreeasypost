@@ -1,2 +1,0 @@
-class PostageController < ApplicationController
-end

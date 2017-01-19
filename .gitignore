@@ -44,3 +44,4 @@ bower.json
 Gemfile.lock
 /spec/dummy
 pkg
+*.gem

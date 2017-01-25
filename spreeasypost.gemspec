@@ -19,13 +19,15 @@ Gem::Specification.new do |s|
   s.add_development_dependency "pry-byebug" # binding.pry to debug!
   s.add_development_dependency "awesome_print"
   s.add_development_dependency "rspec"
+  s.add_development_dependency "capybara-webkit"
   s.add_development_dependency "rails"
   s.add_development_dependency 'factory_girl', '~> 4.4'
   s.add_development_dependency "factory_girl_rails"
   s.add_development_dependency 'rspec-rails',  '~> 3.5.2'
   s.add_development_dependency 'spring-commands-rspec'
   s.add_development_dependency 'guard-rspec'
-
+  s.add_development_dependency 'fuubar'
+  s.add_development_dependency 'webmock'
 
   s.add_dependency 'spree_core', '~> 3.1.1'
   s.add_dependency 'easypost', '2.1.7'

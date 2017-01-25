@@ -19,6 +19,7 @@ require 'pry-byebug' # binding.pry to debug!
 require 'awesome_print'
 require 'capybara-screenshot'
 
+require 'webmock/rspec'
 require 'rspec/rails'
 require 'database_cleaner'
 require 'ffaker'
@@ -37,7 +38,12 @@ require 'spree/testing_support/url_helpers'
 # Requires factories defined in lib/spreeasypost/factories.rb
 require 'spreeasypost/factories'
 
+# Capybara.javascript_driver = :webkit
+
 RSpec.configure do |config|
+
+  WebMock.disable!
+
   config.include FactoryGirl::Syntax::Methods
 
   # Infer an example group's spec type from the file location.

@@ -21,26 +21,11 @@ describe "Shipments", type: :feature, js: true do
       end
 
       it "on click should call method using ajax" do
-        WebMock.enable!
-        binding.pry
-        stub_request(:post, '/easy_post/shipment/'+order.id+'/postage').
-        with(body: "abc", headers: { 'Content-Length' => 3 })
-        # should have_link('Purchase Postage', href: spree.new_easy_post_shipment_postage_path(order.shipments[0].id))
         click_on "Purchase Postage"
-        wait_for_ajax
-        expect(page).to have_content("abc") 
-
-        WebMock.disable!
+        wait_until{ expect(page).to_not have_content("Purchase Postage") }
+        expect(page.current_url).to have_content('easypost') 
       end
     end
-
-    # it "can ship a completed order" do
-    #   click_on "Ship"
-    #   wait_for_ajax
-
-    #   expect(page).to have_content("shipped package")
-    #   expect(order.reload.shipment_state).to eq("shipped")
-    # end
 
   end
 end

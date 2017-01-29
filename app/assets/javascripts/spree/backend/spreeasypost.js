@@ -5,8 +5,8 @@ $(document).ready(function () {
     // handle ship click
   $('[data-hook=admin_shipment_form] a.purchase-postage').on('click', function () {
     var link = $(this);
-    var shipment_number = link.data('shipment-number');
-    var url = Spree.url('/easy_post/shipment/'+shipment_number+'/postage.json');
+    var order_number = link.data('order-number');
+    var url = Spree.url('/easy_post/order/'+order_number+'/postage.json');
     $.ajax({
       type: 'POST',
       url: url,

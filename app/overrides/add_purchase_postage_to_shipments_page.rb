@@ -3,6 +3,6 @@ Deface::Override.new(virtual_path: 'spree/admin/orders/_shipment',
   insert_after: "strong.stock-location-name",
   text: "
     <% if shipment.ready? %>
-      <%= link_to 'Purchase Postage', 'javascript:;', class: 'purchase-postage pull-right btn btn-success', data: { 'shipment-number' => shipment.number } %>
+      <%= link_to 'Purchase Postage', 'javascript:;', class: 'purchase-postage pull-right btn btn-success', data: { 'order-number' => order.number } %>
     <% end %>
   ")

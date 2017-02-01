@@ -5,13 +5,29 @@ module Spreeasypost
       class_option :auto_run_migrations, :type => :boolean, :default => false
 
       def add_javascripts
-        append_file 'vendor/assets/javascripts/spree/frontend/all.js', "//= require spree/frontend/spreeasypost\n"
-        append_file 'vendor/assets/javascripts/spree/backend/all.js', "//= require spree/backend/spreeasypost\n"
+        front_all = 'vendor/assets/javascripts/spree/frontend'
+        back_all = 'vendor/assets/javascripts/spree/backend'
+        front_all_js = front_all + '/all.js'
+        back_all_js = back_all + '/all.js'
+        !Dir.exists?(front_all) ? Dir.mkdir(front_all) : nil
+        !Dir.exists?(back_all) ? Dir.mkdir(back_all) : nil
+        !File.exist?(front_all_js) ? File.new(front_all_js, "w").close : nil
+        !File.exist?(back_all_js) ? File.new(back_all_js, "w").close : nil
+        append_file front_all_js, "//= require spree/frontend/spreeasypost\n"
+        append_file back_all_js, "//= require spree/backend/spreeasypost\n"
       end
 
       def add_stylesheets
-        inject_into_file 'vendor/assets/stylesheets/spree/frontend/all.css', " *= require spree/frontend/spreeasypost\n", :before => /\*\//, :verbose => true
-        inject_into_file 'vendor/assets/stylesheets/spree/backend/all.css', " *= require spree/backend/spreeasypost\n", :before => /\*\//, :verbose => true
+        front_all = 'vendor/assets/stylesheets/spree/frontend'
+        back_all = 'vendor/assets/stylesheets/spree/backend'
+        front_all_css = front_all + '/all.css'
+        back_all_css = back_all + '/all.css'
+        !Dir.exists?(front_all) ? Dir.mkdir(front_all) : nil
+        !Dir.exists?(back_all) ? Dir.mkdir(back_all) : nil
+        !File.exist?(front_all_css) ? File.new(front_all_css, "w").close : nil
+        !File.exist?(back_all_css) ? File.new(back_all_css, "w").close : nil
+        append_file front_all_css, " *= require spree/frontend/spreeasypost\n"
+        inject_into_file back_all_css, " *= require spree/backend/spreeasypost\n", :before => /\*\//, :verbose => true
       end
 
       def add_migrations

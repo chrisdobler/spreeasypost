@@ -26,7 +26,7 @@ module Spreeasypost
         !Dir.exists?(back_all) ? Dir.mkdir(back_all) : nil
         !File.exist?(front_all_css) ? File.new(front_all_css, "w").close : nil
         !File.exist?(back_all_css) ? File.new(back_all_css, "w").close : nil
-        append_file front_all_css, " *= require spree/frontend/spreeasypost\n"
+        # append_file front_all_css, " *= require spree/frontend/spreeasypost\n"
         inject_into_file back_all_css, " *= require spree/backend/spreeasypost\n", :before => /\*\//, :verbose => true
       end
 

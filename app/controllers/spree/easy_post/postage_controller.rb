@@ -7,8 +7,7 @@ class Spree::EasyPost::PostageController < ApplicationController
 		  Rails.logger.warn "Param #{key}: #{value}"
 		end
 
-		EasyPost.api_key = 'cueqNZUb3ldeWTNX7MU3Mel8UXtaAMUi'
-		# EasyPost.api_key = ENV['EASYPOST_API_KEY']
+		EasyPost.api_key = ENV['EASYPOST_API_KEY']
 
 		order = Spree::Order.find_by_number(params["order_id"])
 
@@ -46,18 +45,9 @@ class Spree::EasyPost::PostageController < ApplicationController
 		)
 
 		# shipment.insure(amount: 100)
+		# puts shipment.insurance
 
-		puts shipment.insurance
-
-		puts shipment.postage_label.label_url
-
-
-
-
-
-
-
-		response = {url: "https://easypost-files.s3-us-west-2.amazonaws.com/files/postage_label/20170126/2baff2c5684648ab8b8b472bcde66802.png", id: params[:shipment_id] }
+		response = {url: shipment.postage_label.label_url, id: params[:shipment_id] }
 		respond_to do |format|
       format.json { render :json => response }
     end
